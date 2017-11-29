@@ -1,0 +1,144 @@
+* {
+			font-family: 微軟正黑體;
+			box-sizing: border-box;
+		}
+
+		html {
+			line-height: 1;
+			
+		}
+
+		ol, ul {
+			list-style: none;
+		}
+		.wrap {
+			max-width: 1000px;
+			margin: 30px auto;
+		}
+
+		.container {
+			font-size: 20px;		    
+		    text-align: left;
+		    max-width: 1000px;
+		    margin: 30px auto;
+		}
+		
+
+		.start {
+			font-size: 18px;
+			color: #FFF;
+			border: 1px solid gray;
+			border-radius: 5px;
+			box-shadow: 2px 2px 1px  #aaa;
+			background-color: #900;
+			padding: 10px;
+			position: relative;			
+		}
+
+		.start:hover {
+			top: 2px;
+			opacity:0.6;
+		}
+
+		.start:active {
+			top: 2px;
+		}		
+
+		.progress {
+			display: inline-block;
+			border: 1px solid gray;
+			box-shadow: 5px 5px 2px  #aaa;
+			background-color: #FFF;
+			border-radius: 5px;
+			padding: 5px 0px;
+			margin: 5px;
+			text-align: center;
+			width: 20%;
+		}
+
+		.listTitle {	
+			font-weight: bold;
+			margin-top: 5px;
+		}
+
+		#adv, #verb, #verb2, #noun {			
+			margin: 15px 0px;			
+			padding: 5px;			
+			text-align: center;
+		}
+
+		.show {
+			font-size: 40px;
+			height: 50px;
+		}
+
+		li {
+			margin: 15px;
+			list-style: square;
+			list-style-position:inside;
+		}
+
+		.content {			
+			margin-top: 5px;
+		}		
+
+		.list {
+			display: inline-block;
+			border: 1px solid gray;
+			margin: 15px auto;
+			width: 50%;			
+			min-height: 350px;
+			padding: 15px 30px;
+			background-color: #FFEBFF;
+			z-index: 7;
+			position: fixed;
+			top: 390px;
+			left: 20%;
+			box-shadow: 5px 5px 3px  #aaa;
+			transform: rotate(-3deg);
+		}
+
+		hr {
+			box-shadow: 1px 1px 1px  #aaa;
+		}
+
+		.listBack {			
+			border: 1px solid #AAA;
+			width: 50%;
+			height: 350px;			
+			padding: 15px 30px;
+			position: fixed;
+			left: 15%;
+			top: 400px;			
+			box-shadow: 5px 5px 3px  #aaa;
+
+		}
+		
+
+		footer {
+		    text-align:center;
+		    position:fixed;
+		    bottom:0;
+		    left: 0;
+		    right: 0;
+		    margin: 10px;
+		    z-index: 10;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.container {
+				font-size: 18px; 
+			}
+			.list {
+				left: 10%;
+				width: 60%;
+			}
+			.listBack {
+				left: 5%;
+				width: 60%;
+			}
+			.show {
+				font-size: 30px;
+				height: 40px;
+			}
+		}
