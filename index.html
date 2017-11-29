@@ -186,22 +186,10 @@
 			setTimeout(function(){goFunD()}, 50);
 			return goA + goB + goC + goD;
 		}
-		/*function clickFun() {
-			var clickNum = 0;
-			clickNum++;
-			if ( clickNum == 8) {
-				document.getElementById("start").value = '重新開始';
-				return 	clickNum;		
-			}else {
-				return 	clickNum;
-			}
-		}
-		*/
+		
 		var clickNum = 0;
 		function myfun() {
-			/*var showBox = document.getElementsByClassName('show');
-			showBox.style.display = "inline-block";
-			*/				
+							
 			var i = setInterval(function(){progressFun()}, 50);
 			setTimeout(function( ) { endFun(i) }, 1000);
 			setTimeout(function( ) {document.getElementById("start").value = '再一次';}, 990);
@@ -215,17 +203,7 @@
 			}else {
 				return 	0;
 				
-			}
-			/*var i = Math.floor((Math.random() * 9 )  +1 );
-			var j = Math.floor((Math.random() * 9 )  +1 );
-			var k = Math.floor((Math.random() * 9 )  +1 );
-			*/
-			/*document.getElementById("adv").innerHTML = '<div>' + arr1[1]+ '</div>';
-			document.getElementById("verb").innerHTML = '<div>' + arr2[1]+ '</div>';
-			document.getElementById("noun").innerHTML = '<div>' + arr3[1]+ '</div>';
-			*/
-
-						
+			}		
 		}
 		function endFun(i){
 		    clearInterval(i);
