@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>計畫名稱組合器</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<style type="text/css">
+		* {
+			font-family: 微軟正黑體;
+			box-sizing: border-box;
+		}
+
+		html {
+			line-height: 1;
+			
+		}
+
+		ol, ul {
+			list-style: none;
+		}
+		.wrap {
+			max-width: 1000px;
+			margin: 30px auto;
+		}
+
+		.container {
+			font-size: 20px;		    
+		    text-align: left;
+		    max-width: 1000px;
+		    margin: 30px auto;
+		}
+		
+
+		.start {
+			font-size: 18px;
+			color: #FFF;
+			border: 1px solid gray;
+			border-radius: 5px;
+			box-shadow: 2px 2px 1px  #aaa;
+			background-color: #900;
+			padding: 10px;
+			position: relative;			
+		}
+
+		.start:hover {
+			top: 2px;
+			opacity:0.6;
+		}
+
+		.start:active {
+			top: 2px;
+		}		
+
+		.progress {
+			display: inline-block;
+			border: 1px solid gray;
+			box-shadow: 5px 5px 2px  #aaa;
+			background-color: #FFF;
+			border-radius: 5px;
+			padding: 5px 0px;
+			margin: 5px;
+			text-align: center;
+			width: 20%;
+		}
+
+		.listTitle {	
+			font-weight: bold;
+			margin-top: 5px;
+		}
+
+		#adv, #verb, #verb2, #noun {			
+			margin: 15px 0px;			
+			padding: 5px;			
+			text-align: center;
+		}
+
+		.show {
+			font-size: 40px;
+			height: 50px;
+		}
+
+		li {
+			margin: 15px;
+			list-style: square;
+			list-style-position:inside;
+		}
+
+		.content {			
+			margin-top: 5px;
+		}		
+
+		.list {
+			display: inline-block;
+			border: 1px solid gray;
+			margin: 15px auto;
+			width: 50%;			
+			min-height: 350px;
+			padding: 15px 30px;
+			background-color: #FFEBFF;
+			z-index: 7;
+			position: fixed;
+			top: 390px;
+			left: 20%;
+			box-shadow: 5px 5px 3px  #aaa;
+			transform: rotate(-3deg);
+		}
+
+		hr {
+			box-shadow: 1px 1px 1px  #aaa;
+		}
+
+		.listBack {			
+			border: 1px solid #AAA;
+			width: 50%;
+			height: 350px;			
+			padding: 15px 30px;
+			position: fixed;
+			left: 15%;
+			top: 400px;			
+			box-shadow: 5px 5px 3px  #aaa;
+
+		}
+		
+
+		footer {
+		    text-align:center;
+		    position:fixed;
+		    bottom:0;
+		    left: 0;
+		    right: 0;
+		    margin: 10px;
+		    z-index: 10;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.container {
+				font-size: 18px; 
+			}
+			.list {
+				left: 10%;
+				width: 60%;
+			}
+			.listBack {
+				left: 5%;
+				width: 60%;
+			}
+			.show {
+				font-size: 30px;
+				height: 40px;
+			}
+		}
+
+	</style>
+	<script type="text/javascript">
+		var arr1 = ['永續', '全面', '多元', '自主', '宏觀', '典範', '定期', '便利', '品保', '飛颺', '專業', '創意', '創新', '廣角', '廣域', '數位', '優質', '顯著', '友善', '跨領域'];
+		var arr2 = ['反饋', '加值', '孕育', '交流', '合作', '成立', '成長', '自學', '放眼', '促進', '建置', '訂定', '追蹤', '培育', '培養', '強化', '接軌', '推動', '躍進', '提升' ];
+		var arr3 = ['開拓', '傳承', '落實', '實踐', '精進', '銜接', '整合', '築夢', '豐富', '關懷', '打造', '生根', '共創', '厚植', '品味', '徜佯', '建構', '深耕', '激發', '躍進' ];
+		var arr4 = ['人才', '人文', '風華', '心理', '生涯', '地球村', '成效', '自我', '步伐', '身心', '知能', '社會', '校友', '校園', '海外', '特色', '學涯', '素養', '培力', '國際' ]; //20個項目
+		function getRandom(min, max) {
+		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		function progressFun() {
+			var goA = arr1[getRandom(0, 19)];
+		    var goB = arr2[getRandom(0, 19)];
+		    var goC = arr3[getRandom(0, 19)];
+		    var goD = arr4[getRandom(0, 19)];
+			function goFunA(){
+				document.getElementById("adv").innerHTML= '<div>' + goA + '</div>';
+				return goA;
+			}
+		    function goFunB(){
+				document.getElementById("verb").innerHTML= '<div>' + goB + '</div>';
+				return goB;
+			}		    
+		    function goFunC(){
+				document.getElementById("verb2").innerHTML= '<div>' + goC + '</div>';
+				return goC;
+			}
+			function goFunD(){
+				document.getElementById("noun").innerHTML= '<div>' + goD + '</div>';
+				return goC;
+			}
+			setTimeout(function(){goFunA()}, 50);
+			setTimeout(function(){goFunB()}, 50);
+			setTimeout(function(){goFunC()}, 50);
+			setTimeout(function(){goFunD()}, 50);
+			return goA + goB + goC + goD;
+		}
+		/*function clickFun() {
+			var clickNum = 0;
+			clickNum++;
+			if ( clickNum == 8) {
+				document.getElementById("start").value = '重新開始';
+				return 	clickNum;		
+			}else {
+				return 	clickNum;
+			}
+		}
+		*/
+		var clickNum = 0;
+		function myfun() {
+			/*var showBox = document.getElementsByClassName('show');
+			showBox.style.display = "inline-block";
+			*/				
+			var i = setInterval(function(){progressFun()}, 50);
+			setTimeout(function( ) { endFun(i) }, 1000);
+			setTimeout(function( ) {document.getElementById("start").value = '再一次';}, 990);
+			
+			clickNum++;			
+			if ( clickNum == 5) {
+				document.getElementById("reStart").style.display = "block";
+				document.getElementById("start").style.display = "none";				
+				return 	0;
+					
+			}else {
+				return 	0;
+				
+			}
+			/*var i = Math.floor((Math.random() * 9 )  +1 );
+			var j = Math.floor((Math.random() * 9 )  +1 );
+			var k = Math.floor((Math.random() * 9 )  +1 );
+			*/
+			/*document.getElementById("adv").innerHTML = '<div>' + arr1[1]+ '</div>';
+			document.getElementById("verb").innerHTML = '<div>' + arr2[1]+ '</div>';
+			document.getElementById("noun").innerHTML = '<div>' + arr3[1]+ '</div>';
+			*/
+
+						
+		}
+		function endFun(i){
+		    clearInterval(i);
+		    document.getElementById("result").innerHTML += '<li>' + progressFun() + '</li><hr>';
+		}
+		function reLoad(){
+		    window.location.reload();    
+		}
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="container">
+			<h1 style="text-align: center;color: red;font-weight: 900;">計畫名稱~腦力激盪~</h1>			
+			<h2>每當計畫書撰寫時，最困擾要用什麼閃亮的名稱才能打動教育部審查委員，就讓程式隨機產生一組，作為腦力激盪的素材吧！
+			<span style="font-size:14px;color: red;">※以下詞組資料庫係根據歷年計畫名稱拆解整理而成，重新組合後也許能提供構思靈感哦！</span></h2>			
+			<input type="button" value="開始囉" id="start" class="start" onclick="myfun()" style="display: block;">
+			<input type="button" value="重新開始" id="reStart" class="start" onclick="reLoad()" style="display: none;">	
+			
+			<div class="progress">
+				<div class="listTitle">詞組1</div>
+				<div class="show" id="adv" style="background-color: #F90;"></div>			
+			</div>	
+			<div class="progress">		
+				<div class="listTitle">詞組2</div>
+				<div class="show" id="verb" style="background-color: #6C0;"></div>
+			</div>
+			<div class="progress">		
+				<div class="listTitle">詞組3</div>
+				<div class="show" id="verb2" style="background-color: #FF0;"></div>
+			</div>	
+			<div class="progress">								
+				<div class="listTitle">詞組4</div>
+				<div class="show" id="noun" style="background-color: #0CF;"></div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="list">				
+					<h3>計畫名稱結果列表</h3>
+					<hr>
+					<div id="result"></div>				
+			</div>
+			<div class="listBack" style="z-index: 1;transform: rotate(-2deg);background-color: #CFF;"><br><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr></div>
+			<div class="listBack" style="z-index: 2;transform: rotate(1deg) translate(30%,1%);background-color: #FFF;"></div>
+			<div class="listBack" style="z-index: 3;transform: rotate(-5deg) translate(0px,10%);background-color: #FFF;"><br><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr></div>
+			<div class="listBack" style="z-index: 4;transform: rotate(2deg) translate(35%,10%);background-color: #FFC;"><br><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr></div>
+			<div class="listBack" style="z-index: 5;transform: rotate(-10deg) translate(5%,20%);background-color: #FFC;"><br><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr><br><hr></div>
+		</div>
+		<footer> copyright @ JiaYing <footer>
+	</div>
+</body>
+</html>
