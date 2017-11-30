@@ -86,6 +86,7 @@
 		.list {
 			display: inline-block;
 			border: 1px solid gray;
+			background-image: linear-gradient(-10deg , #FFF ,#FFEBFF 40%);
 			margin: 15px auto;
 			width: 50%;			
 			min-height: 350px;
@@ -105,6 +106,7 @@
 
 		.listBack {			
 			border: 1px solid #AAA;
+			background-image: linear-gradient(-10deg , #FFF , transparent 40%);
 			width: 50%;
 			height: 350px;			
 			padding: 15px 30px;
